@@ -20,6 +20,7 @@ class Dog extends Animal {
         super(name);
     }
 
+    //추상메소드 구현
     @Override
     public void makeSound() {
         System.out.println("멍멍!");
@@ -32,6 +33,7 @@ class Cat extends Animal {
         super(name);
     }
 
+    //추상 메소드 구현
     @Override
     public void makeSound() {
         System.out.println("야옹!");

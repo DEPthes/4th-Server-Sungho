@@ -1,0 +1,237 @@
+자바 강의
+
+-삼항 연산자 
+조건 ? 참일 때 : 거짓일 때
+
+-문자열 기능
+String s = "I like Java"
+길이 : s.length();  -> 11
+대문자 변환 : s.toUpperCase(); -> I LIKE JAVA
+소문자 변환 : s.toLowerCase(); -> i like java
+포함 여부 : s.contains("Java"); -> true
+위치 : s.indexOf("Java"); -> 7
+마지막 위치 : s.lastIndexOf("a"); -> 10
+문자열로 시작하는지 : s.startsWith("I like"); -> true
+문자열로 끝나는지 : s.endsWith("x"); -> false
+문자열 변환 : s.replace("like", "love"); -> I love Java
+앞뒤 공백 제거 : s.trim(); -> I like Java
+문자열 자르기 : s.substring(7); -> Java
+문자열 결합 : s.concat(" and Python"); -> I like Java and Python
+
+-문자열 비교
+그냥 등호로만 가르키면 다른 곳을 참조하기 때문에 문자열을 비교할 떈
+s1.equals(s2)를 사용해야함.
+
+-Switch Case
+switch(조건) {
+	case 값1 : 명령문
+		break;
+	case 값2 : 명령문
+		break;
+	case 값3 : 명령문
+		break;
+	default : 명령문
+}
+
+-배열
+1.자료형[] 변수명 = new 자료형[크기]; 
+2.자료형 변수명[] = new 자료형[크기];
+3.자료형[] 변수명 = {값1,값2,값3...};
+ex)
+int[] numbers = new int[]{1,2,3,4,5};
+
+-배열 순회
+for(int i = 0; i < 배열.length(); i++){
+	...
+}
+
+-다차원 배열
+자료형[][] 변수명 = new 자료형[2][5];
+ex)
+int[][] numbers = new int[][](
+	{1,2,3,4,5},
+	{6,7,8,9,10}
+};
+
+-다차원 배열 순회
+for(int i = 0; i < numbers.length(); i++){
+	for(int j = 0; j <numbers[i].length(); j++){
+		...
+	}
+}
+
+-클래스 변수 : 클래스 내에 static으로 선언된 변수
+-> 객체를 직접 만들 필요 없이 클래스 명으로 접근 가능
+-> 클래스 내에 있는 메소드도 static을 붙이면 객체 선언 없이 접근 가능
+
+-this 변수 : 자기 자신(인스턴스 / 지역 변수 구분)
+
+-접근 제어자
+private : 해당 클래스 내에서만
+public : 모든 클래스에서
+default : 같은 패키지 내에서만
+protected : 같은 패키지 내에서, 다른 패키지인 경우 자식 클래스에서
+
+-final : 변경할 수 없게 쓰는 
+
+-enum :  열거형(상수들의 묶음)
+enm 열겨형명 {
+	상수명1,
+	상수명2
+}
+
+-추상 클래스 : 아직 완성되지 않은 클래스
+abstract class 클래스명 {
+
+}
+
+-인터페이스 : 클래스를 작성할 때 기본이 되는 뼈대
+interface 인터페이스명 {
+}
+
+-제네릭스 : 다양한 형태의 데이터를 다룰 수 있게
+ex) 다양한 자료형과 같은 동작을 하는 함수
+public static <T> void printValue(T value){
+	System.out.println(value);
+} 
+-> value의 값에 따라서 알아서 자료형 바뀜
+
+-제네릭 클래스 : 제네릭 기반 클래스
+class 클래스명 <T> {
+}
+ex)다양한 자료형과 같은 동작을 하는 클래스
+class Box<T> {	// 같은 클래스 다른 자료형 같은 동작
+	T data;
+	public void setData(T data) {
+		this.data = data;
+	}
+}
+
+public static void main(String[] args) {
+	Box<Integer> iBox = new Box<>(); // 어떻게 쓰이는지
+	iBox.setData(3); 
+	
+	Box<String> sBox = new Box<>();
+	sBox.setData("안녕"); 
+}
+
+-Wrapper 클래스 : 기본 자료형 + 추가 기능 제공 클래스  ----------------------> 좀 더 알아보기
+int -> Integer
+
+-ArrayList : 배열 기반 리스트, 빠른 접근 + 순차 저장
+ArrayList<String> list = new ArrayList<>();
+list.add("성호");
+list.add("상빈");
+
+for (String s : list) {
+	System.out.println(s);
+}
+
+-LinkedList : 연결 리스트, 데이터의 빠른 삽입 + 삭제
+LinkedList<String> list = new LinkedList<>();
+list.add("성호");
+list.add("상빈");
+
+for (String s : list) {
+	System.out.println(s);
+}
+
+-HashSet
+HashSet<String> set = new HashSet<>();
+set.add("성호");
+set.add("상빈");
+set.add("성호"); // 추가 안됨. 중복 X
+
+-HashMap : (key, value) 자료구조, 중복 X 순서 X
+HashMap<String, Integer> map = new HashMap<>();
+map.put("성호", 100);
+map.put("상빈", 90);
+
+-Iterator : 컬렉션의 모든 데이터 순회
+ArrayList<String> list = new ArrayList<>();
+list.add("성호");
+list.add("상빈");
+
+Iterator<String> it = list.iterator(); // for문 대신에 iterator 사용해서 출력
+while(it.hasNext()) {
+	System.out.println(it.next());
+}
+
+--------------익명 클래스, 람다와 스트림---------------------- ㅈㄴ 어렵네 이거 발표하자
+-익명 클래스 : 한 번만 사용되는 이름없는 클래스
+class Person{
+
+-람다식 : 간결한 형태의 코드 묶음
+(전달값1, 전달값2, ....) -> {코드}
+ex)
+public int add(int x, int y) {
+	return x + y;
+}
+와 동일한 람다식
+(x, y) -> x + y
+
+-함수형 인터페이스 : 람다식을 위한 인터페이스(딱 하나의 추상 메소드를 가져야함) // 다시
+@FuntionalInterface 
+
+-스트림 : 배열, 컬렉션 데이터를 효과적으로 처리
+
+---------------예외 처리-----------------
+-예외 처리 : 프로그램 내에서 발생 가능한 문제 상황을 처리
+
+-Catch : 예외의 종류에 따른 처리
+
+-throw : 예외를 발생시킬 때 
+
+-finally : 항상 실행되는 코드
+
+-Try With Resources
+
+-사용자 정의 예외 : 직접 정의한 예외
+Exception 클래스를 상속해서 사용
+
+-예외처리 미루기 : 메소드를 호출한 곳에서 처리
+
+--------쓰레드------------
+-Thread : 여러 작업을 동시에
+class MyThread extends Thread { 
+	public void run(){
+		for(int i = 1; i <= 5; i++) {
+			System.out.println("Thread : " + i );
+		}
+	}
+}
+
+public static void main(String[] args) {
+	MyThread thread = new MyThread();
+	thread.start(); // 새로운 thread를 만들어서 run() 메소드 동작 
+}
+
+-Runnable : 여러 작업을 동시에
+class MyRunnable implements Runnable { 
+	public void run(){
+		for(int i = 1; i <= 5; i++) {
+			System.out.println("Runnable : " + i );
+		}
+	}
+}
+
+public static void main(String[] args) {
+	MyRunnable runnable = new MyRunnable();
+	Thread thread = new Thread(runnable);
+	thread.start(); // 새로운 thread를 만들어서 run() 메소드 동작 
+}
+
+-Join : 쓰레드 실행 마칠 때까지 대기
+
+-------------입출력과 파일------------------
+-입력 : 데이터를 입력받는 것
+Scanner sc = new Scanner(System.in);
+System.out.print("정수 입력: ");
+int number = sc.nextInt();
+System.out.println("입력된 정수 : " + number);
+
+
+질문 1. static final 등 변수 범위에 대해서 알아보기(접근 제어자)
+질문 2 . Getter & Setter 쓰는 이유
+질문 3. 오버라이딩, 다형성
+질문 4. 추상 클래스 / 인터페이스 차이

@@ -118,7 +118,117 @@ public static void main(String[] args) {
 -Wrapper 클래스 : 기본 자료형 + 추가 기능 제공 클래스  ----------------------> 좀 더 알아보기
 int -> Integer
 
+-ArrayList : 배열 기반 리스트, 빠른 접근 + 순차 저장
+ArrayList<String> list = new ArrayList<>();
+list.add("성호");
+list.add("상빈");
 
+for (String s : list) {
+	System.out.println(s);
+}
+
+-LinkedList : 연결 리스트, 데이터의 빠른 삽입 + 삭제
+LinkedList<String> list = new LinkedList<>();
+list.add("성호");
+list.add("상빈");
+
+for (String s : list) {
+	System.out.println(s);
+}
+
+-HashSet
+HashSet<String> set = new HashSet<>();
+set.add("성호");
+set.add("상빈");
+set.add("성호"); // 추가 안됨. 중복 X
+
+-HashMap : (key, value) 자료구조, 중복 X 순서 X
+HashMap<String, Integer> map = new HashMap<>();
+map.put("성호", 100);
+map.put("상빈", 90);
+
+-Iterator : 컬렉션의 모든 데이터 순회
+ArrayList<String> list = new ArrayList<>();
+list.add("성호");
+list.add("상빈");
+
+Iterator<String> it = list.iterator(); // for문 대신에 iterator 사용해서 출력
+while(it.hasNext()) {
+	System.out.println(it.next());
+}
+
+--------------익명 클래스, 람다와 스트림---------------------- ㅈㄴ 어렵네 이거 발표하자
+-익명 클래스 : 한 번만 사용되는 이름없는 클래스
+class Person{
+
+-람다식 : 간결한 형태의 코드 묶음
+(전달값1, 전달값2, ....) -> {코드}
+ex)
+public int add(int x, int y) {
+	return x + y;
+}
+와 동일한 람다식
+(x, y) -> x + y
+
+-함수형 인터페이스 : 람다식을 위한 인터페이스(딱 하나의 추상 메소드를 가져야함) // 다시
+@FuntionalInterface 
+
+-스트림 : 배열, 컬렉션 데이터를 효과적으로 처리
+
+---------------예외 처리-----------------
+-예외 처리 : 프로그램 내에서 발생 가능한 문제 상황을 처리
+
+-Catch : 예외의 종류에 따른 처리
+
+-throw : 예외를 발생시킬 때 
+
+-finally : 항상 실행되는 코드
+
+-Try With Resources
+
+-사용자 정의 예외 : 직접 정의한 예외
+Exception 클래스를 상속해서 사용
+
+-예외처리 미루기 : 메소드를 호출한 곳에서 처리
+
+--------쓰레드------------
+-Thread : 여러 작업을 동시에
+class MyThread extends Thread { 
+	public void run(){
+		for(int i = 1; i <= 5; i++) {
+			System.out.println("Thread : " + i );
+		}
+	}
+}
+
+public static void main(String[] args) {
+	MyThread thread = new MyThread();
+	thread.start(); // 새로운 thread를 만들어서 run() 메소드 동작 
+}
+
+-Runnable : 여러 작업을 동시에
+class MyRunnable implements Runnable { 
+	public void run(){
+		for(int i = 1; i <= 5; i++) {
+			System.out.println("Runnable : " + i );
+		}
+	}
+}
+
+public static void main(String[] args) {
+	MyRunnable runnable = new MyRunnable();
+	Thread thread = new Thread(runnable);
+	thread.start(); // 새로운 thread를 만들어서 run() 메소드 동작 
+}
+
+-Join : 쓰레드 실행 마칠 때까지 대기
+
+-------------입출력과 파일------------------
+-입력 : 데이터를 입력받는 것
+Scanner sc = new Scanner(System.in);
+System.out.print("정수 입력: ");
+int number = sc.nextInt();
+System.out.println("입력된 정수 : " + number);
 
 
 질문 1. static final 등 변수 범위에 대해서 알아보기(접근 제어자)

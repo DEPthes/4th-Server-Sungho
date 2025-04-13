@@ -1,4 +1,4 @@
-package javaInterface;
+package week1.javaInterface;
 
 // 식당 손님
 class Customer {

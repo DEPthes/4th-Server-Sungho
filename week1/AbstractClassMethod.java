@@ -1,3 +1,5 @@
+package week1;
+
 //추상 클래스 선언
 abstract class Animal{
     private String name;
@@ -14,7 +16,7 @@ abstract class Animal{
     public abstract void makeSound();
 }
 
-//추상 클래스를 상속받는 Dog 클래스(실체 클래스)
+//추상 클래스를 상속받는 Week1.Dog 클래스(실체 클래스)
 class Dog extends Animal {
     public Dog(String name){
         super(name);
@@ -27,7 +29,7 @@ class Dog extends Animal {
     }
 }
 
-//추상 클래스를 상속받는 Cat 클래스(실체 클래스)
+//추상 클래스를 상속받는 Week1.Cat 클래스(실체 클래스)
 class Cat extends Animal {
     public Cat(String name){
         super(name);

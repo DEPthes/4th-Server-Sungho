@@ -1,4 +1,4 @@
-package javaInterface;
+package week1.javaInterface;
 
 interface ICustomer {
     String getOrder();

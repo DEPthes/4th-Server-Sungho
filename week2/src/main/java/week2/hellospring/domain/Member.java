@@ -1,7 +1,13 @@
 package week2.hellospring.domain;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+
+@Entity
 public class Member {
 
+    @id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
 

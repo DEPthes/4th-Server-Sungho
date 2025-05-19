@@ -1,4 +1,4 @@
-package week2.hellospring.controller;
+package week5.hellospring.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

@@ -1,12 +1,12 @@
-package week2.hellospring.service;
+package week5.hellospring.service;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import week2.hellospring.domain.Member;
-import week2.hellospring.repository.MemberRepository;
-import week2.hellospring.repository.MemoryMemberRepository;
+import week5.hellospring.domain.Member;
+import week5.hellospring.repository.MemberRepository;
+import week5.hellospring.repository.MemoryMemberRepository;
 
 import java.util.List;
 import java.util.Optional;

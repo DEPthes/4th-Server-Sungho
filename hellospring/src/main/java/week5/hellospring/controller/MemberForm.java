@@ -1,4 +1,4 @@
-package week2.hellospring.controller;
+package week5.hellospring.controller;
 
 public class MemberForm {
     private String name;

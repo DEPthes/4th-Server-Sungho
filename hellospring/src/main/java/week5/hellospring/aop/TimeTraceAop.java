@@ -1,4 +1,4 @@
-package week2.hellospring.aop;
+package week5.hellospring.aop;
 
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class TimeTraceAop {
 
-    @Around("execution(* week2.hellospring..*(..))") // 어디에 사용할 것인지 타게팅
+    @Around("execution(* week5.hellospring..*(..))") // 어디에 사용할 것인지 타게팅
     public Object execute(ProceedingJoinPoint joinPoint) throws Throwable {
         long start = System.currentTimeMillis();
         System.out.println("START = " + joinPoint.toString());

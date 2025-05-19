@@ -1,12 +1,12 @@
-package week2.hellospring.controller;
+package week5.hellospring.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import week2.hellospring.domain.Member;
-import week2.hellospring.service.MemberService;
+import week5.hellospring.domain.Member;
+import week5.hellospring.service.MemberService;
 
 import java.util.List;
 

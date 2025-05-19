@@ -1,6 +1,6 @@
-package week2.hellospring.repository;
+package week5.hellospring.repository;
 
-import week2.hellospring.domain.Member;
+import week5.hellospring.domain.Member;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;

@@ -1,7 +1,7 @@
-package week2.hellospring.repository;
+package week5.hellospring.repository;
 
 import org.springframework.stereotype.Repository;
-import week2.hellospring.domain.Member;
+import week5.hellospring.domain.Member;
 
 import java.util.*;
 
